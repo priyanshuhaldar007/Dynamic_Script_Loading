@@ -85,7 +85,7 @@ function LoadScripts() {
         const origin = window.location.origin;
         const URL= origin + script.url
 
-        fetch(URL)
+        fetch(script.url)
             .then((response) => response.text())
             .then((scriptText) => {
                 
