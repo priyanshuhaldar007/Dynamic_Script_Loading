@@ -81,7 +81,10 @@ function LoadScripts() {
     if (selectedScript.length > 0) {
         selectedScript.forEach(script =>{
         console.log(`Loading script: ${script.url}`);
-        fetch(script.url)
+        
+        const origin = window.location.origin;
+
+        fetch(`${origin}/${script.url}`)
             .then((response) => response.text())
             .then((scriptText) => {
                 
